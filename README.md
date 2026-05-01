@@ -8,6 +8,12 @@ An advanced system monitor in a tiny package. iStat nano is a stunning system mo
 
 View detailed stats about CPU usage, memory usage, hard drive space, bandwidth usage, temperatures, fan speeds, battery usage, uptime and the top 5 processes. iStat nano also shows your public IP address, which be can copied to your clipboard using one of the many keyboard shortcuts.
 
+## How to run (tested on Tahoe)
+
+Install the widget in [Widget Porting Toolkit](https://github.com/nikolan123/WidgetPortingToolkit).
+
+Right-click the .wdgt bundle, click Show Package Contents, and locate the `istat_server.py` file. Run it using Python.
+
 ## Native plugin replacement status
 
 The original `iStatNano.bundle` plugin has been replaced by `scripts/iStatNanoShim.js`, which waits for a local data server before running the widget setup. Start the server from this widget directory:
