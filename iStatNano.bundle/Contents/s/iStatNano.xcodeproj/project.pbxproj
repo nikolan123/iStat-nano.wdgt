@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		9457493C0BB7644700F590AF /* iStatNano.m in Sources */ = {isa = PBXBuildFile; fileRef = 9457493B0BB7644700F590AF /* iStatNano.m */; };
+		945749660BB767B800F590AF /* ISNDataMinerBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = 945749590BB767B800F590AF /* ISNDataMinerBattery.m */; };
+		945749670BB767B800F590AF /* ISNDataMinerCPU.m in Sources */ = {isa = PBXBuildFile; fileRef = 9457495B0BB767B800F590AF /* ISNDataMinerCPU.m */; };
+		945749680BB767B800F590AF /* ISNDataMinerDisks.m in Sources */ = {isa = PBXBuildFile; fileRef = 9457495D0BB767B800F590AF /* ISNDataMinerDisks.m */; };
+		945749690BB767B800F590AF /* ISNDataMinerFans.m in Sources */ = {isa = PBXBuildFile; fileRef = 9457495F0BB767B800F590AF /* ISNDataMinerFans.m */; };
+		9457496A0BB767B800F590AF /* ISNDataMinerMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 945749610BB767B800F590AF /* ISNDataMinerMemory.m */; };
+		9457496B0BB767B800F590AF /* ISNDataMinerNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 945749630BB767B800F590AF /* ISNDataMinerNetwork.m */; };
+		9457496C0BB767B800F590AF /* ISNDataMinerTemps.m in Sources */ = {isa = PBXBuildFile; fileRef = 945749650BB767B800F590AF /* ISNDataMinerTemps.m */; };
+		9457496E0BB7680D00F590AF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9457496D0BB7680D00F590AF /* WebKit.framework */; };
+		945749A10BB7681200F590AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945749A00BB7681200F590AF /* SystemConfiguration.framework */; };
+		945749B20BB7681A00F590AF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945749B10BB7681A00F590AF /* IOKit.framework */; };
+		94574A510BB7682500F590AF /* Apple80211.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94574A500BB7682500F590AF /* Apple80211.framework */; };
+		94A8B25D0BDC1C1E0006D819 /* iStatIntelControlleriStatPro.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8B2590BDC1C1E0006D819 /* iStatIntelControlleriStatPro.m */; };
+		94A8B25E0BDC1C1E0006D819 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 94A8B25A0BDC1C1E0006D819 /* LICENSE */; };
+		94A8B25F0BDC1C1E0006D819 /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = 94A8B25B0BDC1C1E0006D819 /* smc.c */; };
+		94B64AB90C56FA2E00CBD231 /* ISNSmartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B64AB80C56FA2E00CBD231 /* ISNSmartController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* iStatNano_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStatNano_Prefix.pch; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* iStatNano.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iStatNano.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		9457493A0BB7644700F590AF /* iStatNano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStatNano.h; sourceTree = "<group>"; };
+		9457493B0BB7644700F590AF /* iStatNano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iStatNano.m; sourceTree = "<group>"; };
+		945749580BB767B800F590AF /* ISNDataMinerBattery.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerBattery.h; sourceTree = "<group>"; };
+		945749590BB767B800F590AF /* ISNDataMinerBattery.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerBattery.m; sourceTree = "<group>"; };
+		9457495A0BB767B800F590AF /* ISNDataMinerCPU.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerCPU.h; sourceTree = "<group>"; };
+		9457495B0BB767B800F590AF /* ISNDataMinerCPU.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerCPU.m; sourceTree = "<group>"; };
+		9457495C0BB767B800F590AF /* ISNDataMinerDisks.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerDisks.h; sourceTree = "<group>"; };
+		9457495D0BB767B800F590AF /* ISNDataMinerDisks.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerDisks.m; sourceTree = "<group>"; };
+		9457495E0BB767B800F590AF /* ISNDataMinerFans.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerFans.h; sourceTree = "<group>"; };
+		9457495F0BB767B800F590AF /* ISNDataMinerFans.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerFans.m; sourceTree = "<group>"; };
+		945749600BB767B800F590AF /* ISNDataMinerMemory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerMemory.h; sourceTree = "<group>"; };
+		945749610BB767B800F590AF /* ISNDataMinerMemory.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerMemory.m; sourceTree = "<group>"; };
+		945749620BB767B800F590AF /* ISNDataMinerNetwork.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerNetwork.h; sourceTree = "<group>"; };
+		945749630BB767B800F590AF /* ISNDataMinerNetwork.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerNetwork.m; sourceTree = "<group>"; };
+		945749640BB767B800F590AF /* ISNDataMinerTemps.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNDataMinerTemps.h; sourceTree = "<group>"; };
+		945749650BB767B800F590AF /* ISNDataMinerTemps.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNDataMinerTemps.m; sourceTree = "<group>"; };
+		9457496D0BB7680D00F590AF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		945749A00BB7681200F590AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		945749B10BB7681A00F590AF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		94574A500BB7682500F590AF /* Apple80211.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apple80211.framework; path = /System/Library/PrivateFrameworks/Apple80211.framework; sourceTree = "<absolute>"; };
+		94A8B2580BDC1C1E0006D819 /* iStatIntelControlleriStatPro.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iStatIntelControlleriStatPro.h; sourceTree = "<group>"; };
+		94A8B2590BDC1C1E0006D819 /* iStatIntelControlleriStatPro.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = iStatIntelControlleriStatPro.m; sourceTree = "<group>"; };
+		94A8B25A0BDC1C1E0006D819 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		94A8B25B0BDC1C1E0006D819 /* smc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
+		94A8B25C0BDC1C1E0006D819 /* smc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
+		94B64AB70C56FA2E00CBD231 /* ISNSmartController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ISNSmartController.h; sourceTree = "<group>"; };
+		94B64AB80C56FA2E00CBD231 /* ISNSmartController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ISNSmartController.m; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				9457496E0BB7680D00F590AF /* WebKit.framework in Frameworks */,
+				945749A10BB7681200F590AF /* SystemConfiguration.framework in Frameworks */,
+				945749B20BB7681A00F590AF /* IOKit.framework in Frameworks */,
+				94574A510BB7682500F590AF /* Apple80211.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* iStatNano */ = {
+			isa = PBXGroup;
+			children = (
+				94A8B2570BDC1C1E0006D819 /* intel */,
+				945749570BB767B800F590AF /* DataMiners */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+				9457493A0BB7644700F590AF /* iStatNano.h */,
+				9457493B0BB7644700F590AF /* iStatNano.m */,
+			);
+			name = iStatNano;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94574A500BB7682500F590AF /* Apple80211.framework */,
+				945749B10BB7681A00F590AF /* IOKit.framework */,
+				945749A00BB7681200F590AF /* SystemConfiguration.framework */,
+				9457496D0BB7680D00F590AF /* WebKit.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* iStatNano.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* iStatNano_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		945749570BB767B800F590AF /* DataMiners */ = {
+			isa = PBXGroup;
+			children = (
+				945749580BB767B800F590AF /* ISNDataMinerBattery.h */,
+				945749590BB767B800F590AF /* ISNDataMinerBattery.m */,
+				9457495A0BB767B800F590AF /* ISNDataMinerCPU.h */,
+				9457495B0BB767B800F590AF /* ISNDataMinerCPU.m */,
+				9457495C0BB767B800F590AF /* ISNDataMinerDisks.h */,
+				9457495D0BB767B800F590AF /* ISNDataMinerDisks.m */,
+				9457495E0BB767B800F590AF /* ISNDataMinerFans.h */,
+				9457495F0BB767B800F590AF /* ISNDataMinerFans.m */,
+				945749600BB767B800F590AF /* ISNDataMinerMemory.h */,
+				945749610BB767B800F590AF /* ISNDataMinerMemory.m */,
+				945749620BB767B800F590AF /* ISNDataMinerNetwork.h */,
+				945749630BB767B800F590AF /* ISNDataMinerNetwork.m */,
+				945749640BB767B800F590AF /* ISNDataMinerTemps.h */,
+				945749650BB767B800F590AF /* ISNDataMinerTemps.m */,
+				94B64AB70C56FA2E00CBD231 /* ISNSmartController.h */,
+				94B64AB80C56FA2E00CBD231 /* ISNSmartController.m */,
+			);
+			path = DataMiners;
+			sourceTree = "<group>";
+		};
+		94A8B2570BDC1C1E0006D819 /* intel */ = {
+			isa = PBXGroup;
+			children = (
+				94A8B2580BDC1C1E0006D819 /* iStatIntelControlleriStatPro.h */,
+				94A8B2590BDC1C1E0006D819 /* iStatIntelControlleriStatPro.m */,
+				94A8B25A0BDC1C1E0006D819 /* LICENSE */,
+				94A8B25B0BDC1C1E0006D819 /* smc.c */,
+				94A8B25C0BDC1C1E0006D819 /* smc.h */,
+			);
+			path = intel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* iStatNano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "iStatNano" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iStatNano;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = iStatNano;
+			productReference = 8D5B49B6048680CD000E48DA /* iStatNano.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "iStatNano" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* iStatNano */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* iStatNano */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				94A8B25E0BDC1C1E0006D819 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9457493C0BB7644700F590AF /* iStatNano.m in Sources */,
+				945749660BB767B800F590AF /* ISNDataMinerBattery.m in Sources */,
+				945749670BB767B800F590AF /* ISNDataMinerCPU.m in Sources */,
+				945749680BB767B800F590AF /* ISNDataMinerDisks.m in Sources */,
+				945749690BB767B800F590AF /* ISNDataMinerFans.m in Sources */,
+				9457496A0BB767B800F590AF /* ISNDataMinerMemory.m in Sources */,
+				9457496B0BB767B800F590AF /* ISNDataMinerNetwork.m in Sources */,
+				9457496C0BB767B800F590AF /* ISNDataMinerTemps.m in Sources */,
+				94A8B25D0BDC1C1E0006D819 /* iStatIntelControlleriStatPro.m in Sources */,
+				94A8B25F0BDC1C1E0006D819 /* smc.c in Sources */,
+				94B64AB90C56FA2E00CBD231 /* ISNSmartController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iStatNano_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = iStatNano;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iStatNano_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = iStatNano;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "iStatNano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "iStatNano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
