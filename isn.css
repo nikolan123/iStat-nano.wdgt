@@ -28,6 +28,17 @@ select {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	cursor: pointer;
+}
+
+#headerClickTarget {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 246px;
+	height: 29px;
+	z-index: 20;
+	cursor: pointer;
 }
 
 .rim {
@@ -52,7 +63,7 @@ select {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	background-image: url(./images/modesel_background.png);
+	background-image: url(./skins/blue/modesel_background_blue.png);
 	z-index:11;
 }
 

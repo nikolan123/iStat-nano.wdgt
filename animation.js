@@ -141,6 +141,16 @@ function selectSection(section, left, top, buttonIndex, pref) {
 	forceWait = true;
 }
 
+function toggleModeSelector() {
+	forceWait = false;
+	if(!modeButtons[0])
+		return;
+	if(isSelectorVisible)
+		hideModeSelector(true);
+	else
+		showModeSelector();
+}
+
 function fadeOutSection() {
 	previousSelection.style.opacity = (opacity2 / 10);
 	if(opacity2 <= 0) {

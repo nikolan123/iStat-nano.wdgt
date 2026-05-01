@@ -14,7 +14,7 @@
 	<script src='setup.js'></script>
 	<script src='dash.js'></script>
 </head>
-<body onload="iStatNano.startWhenReady(setup)" onmouseover="showModeSelector()" onmouseout="hideModeSelector(false)">
+<body onload="iStatNano.startWhenReady(setup)">
 <div id="server_waiting" style="position:absolute;left:0;top:0;width:246px;height:149px;z-index:9999;background:#111;color:#ddd;font-family:Helvetica,Arial,sans-serif;text-align:center;box-sizing:border-box;padding:28px 16px;font-size:12px;line-height:17px;">
 	<div style="color:#3ea0ff;font-weight:bold;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">iStat nano</div>
 	<div>Waiting for the local data server.</div>
@@ -23,6 +23,7 @@
 <div id="front" style='display:block'>
 	<div class='base'></div>
 	<div class='rim'></div>
+	<div id='headerClickTarget' onclick='toggleModeSelector()'></div>
 	<div class='sectionContainer' id='overviewSection'>
 		<img class='header' src='./images/header_overview.png' />
 		<div class='overviewBG'></div>
