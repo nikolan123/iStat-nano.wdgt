@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import ctypes
 import json
 import os
 import re
@@ -18,6 +19,7 @@ HISTORY_LIMIT = 90
 
 PREVIOUS_NET: dict[str, tuple[float, int, int]] = {}
 NET_HISTORY: dict[str, list[list[int]]] = {}
+PREVIOUS_CPU_TICKS: list[list[int]] = []
 EXTERNAL_IP = ""
 EXTERNAL_IP_VALID = False
 EXTERNAL_IP_CHECKED_AT = 0.0
@@ -99,7 +101,91 @@ def sysctl_int(name: str) -> int:
     return parse_int(run(["sysctl", "-n", name]))
 
 
+def read_cpu_ticks() -> list[list[int]]:
+    try:
+        libsystem = ctypes.CDLL("/usr/lib/libSystem.B.dylib")
+        host_processor_info = libsystem.host_processor_info
+        host_processor_info.argtypes = [
+            ctypes.c_uint,
+            ctypes.c_int,
+            ctypes.POINTER(ctypes.c_uint),
+            ctypes.POINTER(ctypes.POINTER(ctypes.c_uint)),
+            ctypes.POINTER(ctypes.c_uint),
+        ]
+        host_processor_info.restype = ctypes.c_int
+
+        processor_count = ctypes.c_uint()
+        info_count = ctypes.c_uint()
+        info = ctypes.POINTER(ctypes.c_uint)()
+        result = host_processor_info(
+            libsystem.mach_host_self(),
+            2,
+            ctypes.byref(processor_count),
+            ctypes.byref(info),
+            ctypes.byref(info_count),
+        )
+        if result != 0:
+            return []
+
+        ticks = []
+        for index in range(processor_count.value):
+            offset = index * 4
+            ticks.append([int(info[offset + state]) for state in range(4)])
+
+        try:
+            mach_task_self = ctypes.c_uint.in_dll(libsystem, "mach_task_self_").value
+            libsystem.vm_deallocate(
+                mach_task_self,
+                ctypes.cast(info, ctypes.c_void_p).value,
+                info_count.value * ctypes.sizeof(ctypes.c_uint),
+            )
+        except Exception:
+            pass
+
+        return ticks
+    except Exception:
+        return []
+
+
 def build_cpu() -> list:
+    global PREVIOUS_CPU_TICKS
+
+    current = read_cpu_ticks()
+    if current and not PREVIOUS_CPU_TICKS:
+        PREVIOUS_CPU_TICKS = current
+        time.sleep(0.2)
+        current = read_cpu_ticks()
+
+    if current and len(current) == len(PREVIOUS_CPU_TICKS):
+        per_core = []
+        total_system = 0
+        total_user = 0
+        total_nice = 0
+
+        for now, previous in zip(current, PREVIOUS_CPU_TICKS):
+            deltas = [max(0, now[state] - previous[state]) for state in range(4)]
+            total_ticks = sum(deltas)
+            if total_ticks <= 0:
+                core_user = core_system = core_nice = 0
+            else:
+                core_user = int(round((deltas[0] / total_ticks) * 100))
+                core_system = int(round((deltas[1] / total_ticks) * 100))
+                core_nice = int(round((deltas[3] / total_ticks) * 100))
+            core_busy = min(100, core_user + core_system + core_nice)
+            total_system += core_system
+            total_user += core_user
+            total_nice += core_nice
+            per_core.append([core_busy, core_system, core_user, core_nice])
+
+        PREVIOUS_CPU_TICKS = current
+        active_cores = max(len(per_core), 1)
+        system = int(round(total_system / active_cores))
+        user = int(round(total_user / active_cores))
+        nice = int(round(total_nice / active_cores))
+        idle = max(0, 100 - system - user - nice)
+        return [[system, user, nice, idle, 100 - idle], per_core[:8]]
+
+    PREVIOUS_CPU_TICKS = current
     output = run(["top", "-l", "1", "-n", "0"])
     match = re.search(
         r"CPU usage:\s*([\d.]+)% user,\s*([\d.]+)% sys,\s*([\d.]+)% idle",
