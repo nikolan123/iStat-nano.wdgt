@@ -22,8 +22,6 @@
 	<integer>149</integer>
 	<key>MainHTML</key>
 	<string>iStatNano.html</string>
-	<key>Plugin</key>
-	<string>iStatNano.bundle</string>
 	<key>Width</key>
 	<integer>246</integer>
 </dict>

@@ -245,22 +245,14 @@ function updateNetwork() {
 }
 
 function getExtIP(){
-	url='http://whatsmyip.islayer.com/?random='+new Date().getTime();
-	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET",url,true);
-	xmlhttp.onreadystatechange=function() {
-		if(xmlhttp.readyState == 4) {
-			extIP = xmlhttp.responseText;
-			if(xmlhttp.status == 200 && extIP.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/)){
-				external_ip.innerHTML = extIP;
-				valid_ip = true;
-			} else {
-				valid_ip = false;
-				external_ip.innerHTML = "Unknown";
-			}
-		}
+	extIP = iStatNano.externalIP();
+	if(iStatNano.externalIPValid() && extIP.length > 0 && extIP.length < 32){
+		external_ip.innerHTML = extIP;
+		valid_ip = true;
+	} else {
+		valid_ip = false;
+		external_ip.innerHTML = "Unknown";
 	}
-	xmlhttp.send(null);
 }
 
 function updateUptime() {

@@ -7,13 +7,19 @@
 	<script>
 		var smart_timer;
 	</script>
+	<script src='scripts/iStatNanoShim.js'></script>
 	<script src='workers.js'></script>
 	<script src='functions.js'></script>
 	<script src='animation.js'></script>
 	<script src='setup.js'></script>
 	<script src='dash.js'></script>
 </head>
-<body onload="setup()" onmouseover="showModeSelector()" onmouseout="hideModeSelector(false)">
+<body onload="iStatNano.startWhenReady(setup)" onmouseover="showModeSelector()" onmouseout="hideModeSelector(false)">
+<div id="server_waiting" style="position:absolute;left:0;top:0;width:246px;height:149px;z-index:9999;background:#111;color:#ddd;font-family:Helvetica,Arial,sans-serif;text-align:center;box-sizing:border-box;padding:28px 16px;font-size:12px;line-height:17px;">
+	<div style="color:#3ea0ff;font-weight:bold;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">iStat nano</div>
+	<div>Waiting for the local data server.</div>
+	<div style="color:#999;margin-top:8px;">Run <code>python3 -B istat_server.py</code> from this widget folder.</div>
+</div>
 <div id="front" style='display:block'>
 	<div class='base'></div>
 	<div class='rim'></div>
