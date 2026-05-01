@@ -247,7 +247,7 @@ def build_memory() -> list:
 
 def build_disks() -> list:
     output = run(["df", "-kP", "-l"])
-    disks = []
+    rows = []
     for line in output.splitlines()[1:]:
         parts = line.split()
         if len(parts) < 6:
@@ -258,16 +258,26 @@ def build_disks() -> list:
         mount = parts[5]
         if total_kb <= 0 or parts[0] in {"devfs", "map"}:
             continue
-        if mount.startswith("/System/Volumes/") or mount.startswith("/private/var/vm"):
+        if mount.startswith("/private/var/vm"):
             continue
+        if mount.startswith("/System/Volumes/") and mount != "/System/Volumes/Data":
+            continue
+        rows.append((mount, total_kb, used_kb, free_kb))
+
+    has_data_volume = any(row[0] == "/System/Volumes/Data" for row in rows)
+    disks = []
+    for mount, total_kb, used_kb, free_kb in rows:
+        if has_data_volume and mount == "/":
+            continue
+        display_mount = "/" if mount == "/System/Volumes/Data" else mount
+        name = "Macintosh HD" if display_mount == "/" else os.path.basename(display_mount) or display_mount
         percent = int(round((used_kb / total_kb) * 100)) if total_kb else 0
-        name = "Macintosh HD" if mount == "/" else os.path.basename(mount) or mount
         disks.append([
             name,
             percent,
             format_legacy_mb(used_kb * 1024),
             format_legacy_mb(free_kb * 1024),
-            mount,
+            display_mount,
             "./images/disk.tiff",
         ])
     return disks[:8]
